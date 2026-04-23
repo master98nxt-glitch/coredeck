@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Google",
+      "path": "https://google.com",
+      "type": "url",
+      "tags": ["web", "search"],
+      "usage": 0,
+      "lastOpened": 0
+    },
+    {
+      "id": "2",
+      "name": "GitHub",
+      "path": "https://github.com",
+      "type": "url",
+      "tags": ["web", "dev"],
+      "usage": 0,
+      "lastOpened": 0
+    },
+    {
+      "id": "3",
+      "name": "YouTube",
+      "path": "https://youtube.com",
+      "type": "url",
+      "tags": ["web", "media"],
+      "usage": 0,
+      "lastOpened": 0
+    },
+    {
+      "id": "4",
+      "name": "Notepad",
+      "path": "C:\\Windows\\notepad.exe",
+      "type": "app",
+      "tags": ["tools", "text"],
+      "usage": 0,
+      "lastOpened": 0
+    },
+    {
+      "id": "5",
+      "name": "Calculator",
+      "path": "C:\\Windows\\System32\\calc.exe",
+      "type": "app",
+      "tags": ["tools", "math"],
+      "usage": 0,
+      "lastOpened": 0
+    }
+  ],
+  "recentCommands": [],
+  "flows": {
+    "work":  [{ "type": "app", "value": "browser" }, { "type": "app", "value": "notepad" }],
+    "study": [{ "type": "url", "value": "https://google.com" }, { "type": "app", "value": "notepad" }],
+    "chill": [{ "type": "url", "value": "https://youtube.com" }],
+    "dev":   [{ "type": "url", "value": "https://github.com" }, { "type": "app", "value": "notepad" }]
+  },
+  "usageMeta": {
+    "queryPatterns": {}
+  },
+  "notes": "Welcome to CoreDeck!\n\nQuick reference:\n  ↑↓ or ←→  navigate\n  Enter       open selected\n  Esc         clear / close\n\nAI Brain Layer:\n  CoreDeck learns from every action.\n  It tracks what you pick for each query\n  and boosts those items in future searches.\n\n  ✦ badge = AI predicted for you\n  ⚡ badge = trending / used recently\n\nSmart matching:\n  Abbreviations work natively:\n    'yt'  → YouTube\n    'gh'  → GitHub\n    'ggl' → Google\n    'calc'→ Calculator\n    'vsc' → VS Code\n  Initials match multi-word names:\n    'vsc' matches 'Visual Studio Code'\n  Typo tolerance on 4+ char queries\n\nTime-aware suggestions:\n  Morning → boosts work/study apps & flows\n  Night   → boosts chill/entertainment\n  Frequent use → items rank higher\n  Recent spike → ⚡ trending badge\n\nNatural language:\n  'im bored'         → chill flow\n  'start work'       → work flow\n  'lets code'        → dev flow\n  'study time'       → study flow\n  'watch something'  → YouTube\n\nFlow system:\n  > flow            list all flows\n  > flow add        add from templates\n  > flow run <n>    run any flow\n  Click 'Flows' in sidebar to manage\n\nGT mode (prefix >):\n  > add          add an app via file picker\n  > yt <query>   search YouTube\n  > g <query>    search Google\n  > calc <expr>  evaluate math\n\nThemes: obsidian · frost · ember · void · cyber · yin · steel · gold\nType: theme <n>  to switch"
+}
