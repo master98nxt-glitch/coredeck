@@ -22,6 +22,25 @@ const DEFAULT_DATA = {
 
 let win = null, tray = null;
 
+// ── SECURITY HELPERS ───────────────────────────────────────────────────────
+const ALLOWED_URL_PROTOCOLS  = ['https:', 'http:'];
+const ALLOWED_APP_EXTENSIONS = ['.exe', '.bat', '.cmd', '.lnk', '.app', '.sh'];
+
+function isSafeUrl(u) {
+  try {
+    const { protocol } = new URL(u);
+    return ALLOWED_URL_PROTOCOLS.includes(protocol);
+  } catch { return false; }
+}
+
+function isSafePath(p) {
+  if (!path.isAbsolute(p))  return false; // must be a full path, not relative
+  if (p.includes('..'))     return false; // no directory traversal
+  const ext = path.extname(p).toLowerCase();
+  return ext === '' || ALLOWED_APP_EXTENSIONS.includes(ext); // folders (no ext) or known safe extensions only
+}
+// ──────────────────────────────────────────────────────────────────────────
+
 function ensureDataFile() {
   const dir = path.dirname(DATA_FILE);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -82,10 +101,16 @@ const SYSTEM_CMDS = {
 
 ipcMain.handle('open-item', async (_e, itemPath, type) => {
   try {
-    if (type==='url') { await shell.openExternal(itemPath); }
-    else { const r=await shell.openPath(itemPath); if(r) return {success:false,error:r}; }
-    return {success:true};
-  } catch(err){ return {success:false,error:err.message}; }
+    if (type === 'url') {
+      if (!isSafeUrl(itemPath)) return { success:false, error:'Blocked: unsafe URL protocol' };
+      await shell.openExternal(itemPath);
+    } else {
+      if (!isSafePath(itemPath)) return { success:false, error:'Blocked: unsafe file path' };
+      const r = await shell.openPath(itemPath);
+      if (r) return { success:false, error:r };
+    }
+    return { success:true };
+  } catch(err) { return { success:false, error:err.message }; }
 });
 
 ipcMain.handle('run-system-cmd', async (_e, keyword) => {
