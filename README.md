@@ -1,259 +1,141 @@
-[README.md](https://github.com/user-attachments/files/27006386/README.md)
-# CoreDeck 🚀
+CoreDeck
 
-> **Personal Command Center** — Lightning-fast launcher with fuzzy search, smart ranking, keyboard navigation, and intelligent command execution.
+CoreDeck is an open-source, lightweight keyboard launcher and automation utility designed for
+Windows and Linux. It allows you to instant-launch applications, web links, and file directories
+entirely from your home row, featuring intelligent local ranking and multi-action sequential workflows.
+version: 1.1.0 license: MIT platform: Windows | Mac | Linux
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Mac%20%7C%20Linux-brightgreen)
+Features
 
-## ✨ Features
+Fuzzy Search & Abbreviations: Instantly matches queries using short-hand tags (e.g., yt for YouTube,
+gh for GitHub).
+Adaptive Local Ranking: Tracks usage patterns, recency, and time-of-day history to surface your most
+relevant tools when you need them.
+Sequential Workflows (Flows): Chain multiple apps, directories, or links together to launch complete
+environments (e.g., triggering a dev or `chill` workflow with one command).
+Pure Keyboard Navigation: Full focus on speed. Move through menus without touching your mouse.
+Local-First Privacy: Zero cloud synchronization, zero tracking, and zero telemetry. All paths, notes, and
+metrics remain localized on your hard drive.
 
-- **⚡ Lightning Fast** — Instant fuzzy search with smart abbreviation matching
-  - `yt` → YouTube
-  - `gh` → GitHub
-  - `ggl` → Google
+Quick Start
 
-- **🎯 Smart Ranking** — AI learns from your usage patterns and predicts what you need
-  - Tracks usage frequency
-  - Time-aware suggestions (work apps in morning, entertainment at night)
-  - Recent items rank higher automatically
+Installation
 
-- **⌨️ Pure Keyboard Navigation** — No mouse needed
-  - `↑↓` Navigate results
-  - `Enter` Open selected item
-  - `Esc` Clear and close
+For users running from source, ensure you have Node.js (v14+) installed.
+1. Clone the repository:
 
-- **🔧 System Commands** — Quick access to Windows/Mac utilities
-  - Settings, Task Manager, Terminal, Control Panel, etc.
-  - Just type the command name
+git clone https://github.com/master98nxt-glitch/coredeck.git
+cd coredeck
 
-- **🎨 Multiple Themes** — Customize your look
-  - Obsidian, Frost, Ember, Void, Cyber, Yin, Steel, Gold
+2. Install dependencies:
 
-- **📋 Flow System** — Execute multiple apps/URLs in sequence
-  - Pre-built flows: work, study, chill, dev
-  - Create custom flows easily
-
-- **🧠 Natural Language** — Talk to CoreDeck like a human
-  - "im bored" → chill flow
-  - "start work" → work flow
-  - "lets code" → dev flow
-
-## 🚀 Quick Start
-
-### Requirements
-- Node.js 14+ 
-- npm or yarn
-- Windows 10+, macOS 10.13+, or Linux
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/master98nxt-glitch/coredeck.git
-   cd coredeck
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Run CoreDeck:**
-   ```bash
-   npm start
-   ```
-
-### Build for Distribution
-
-**Windows:**
-```bash
-npm run build:win
-```
-
-**macOS:**
-```bash
-npm run build:mac
-```
-
-**Linux:**
-```bash
-npm run build:linux
-```
-
-Installers will be in the `dist/` folder.
-
-## 🎮 Usage
-
-### Launch CoreDeck
-- **Keyboard Shortcut:** `Ctrl+Space` (Windows/Linux) or `Cmd+Space` (Mac)
-- Or click the tray icon
-
-### Quick Commands
-
-| Shortcut | Action |
-|----------|--------|
-| `↑` / `↓` | Navigate results |
-| `Enter` | Open selected |
-| `Esc` | Close/Clear |
-| `>` prefix | Enter GT mode for advanced commands |
-
-### GT Mode (Advanced Commands)
-
-```
-> add              Open file picker to add new app
-> yt <query>       Search YouTube
-> g <query>        Search Google
-> calc <expr>      Calculate math expression
-> flow             List all flows
-> flow run <n>     Run specific flow
-```
-
-### Example Searches
-
-```
-Google           Opens google.com
-Notepad          Launches Notepad
-Downloads        Opens Downloads folder
-settings         Opens Windows Settings
-task manager     Opens Task Manager
-```
-
-## 🏗️ Project Structure
-
-```
-coredeck/
-├── main.js              # Electron main process
-├── preload.js           # Security bridge
-├── renderer.js          # Frontend logic
-├── index.html           # UI markup
-├── style.css            # Styling
-├── package.json         # Dependencies
-├── data.json            # Default data & flows
-└── assets/              # Icons and resources
-```
-
-## 🔧 Configuration
-
-### data.json Structure
-
-```json
-{
-  "items": [
-    {
-      "id": "1",
-      "name": "Google",
-      "path": "https://google.com",
-      "type": "url",
-      "tags": ["web", "search"],
-      "usage": 0,
-      "lastOpened": 0
-    }
-  ],
-  "flows": {
-    "work": [...],
-    "study": [...],
-    "chill": [...],
-    "dev": [...]
-  }
-}
-```
-
-**Types:** `url`, `app`, `folder`
-**Tags:** Organize items for better searching
-
-## 🎨 Themes
-
-Switch themes by typing: `theme <name>`
-
-Available themes:
-- obsidian (dark, default)
-- frost (cool blues)
-- ember (warm reds)
-- void (pure black)
-- cyber (neon)
-- yin (balanced)
-- steel (metallic)
-- gold (premium)
-
-## 🧠 AI Brain Features
-
-CoreDeck learns from your behavior:
-
-- **Usage Tracking** — Items you open frequently rank higher
-- **Pattern Recognition** — Learns which items you pick for each query
-- **Time-Aware** — Suggests different items based on time of day
-- **Trending Badge** — Shows recently used items with ⚡ badge
-- **Predictive Badge** — Shows AI predictions with ✦ badge
-
-## 🔒 Privacy & Security
-
-- ✅ All data stored locally on your machine
-- ✅ No cloud sync or external tracking
-- ✅ No analytics or telemetry
-- ✅ Open source — audit the code yourself
-- ✅ Runs completely offline
-
-## 🐛 Troubleshooting
-
-### App won't start
-```bash
-rm -rf node_modules
 npm install
+
+3. Start the application:
+•
+
+•
+
+•
+
+•
+•
+
+CoreDeck v1.1.0 Launcher Manual 1
+
 npm start
-```
 
-### Keyboard shortcut not working
-- Check if another app is using `Ctrl+Space`
-- Restart CoreDeck
+Tip: Windows users can alternatively grab the pre-compiled standalone executable directly from the Releases
+tab.
 
-### Files not showing up
-- Verify the file path is correct
-- Use forward slashes on all platforms
+Global Hotkey
+Windows / Linux: Ctrl + Space
 
-## 📚 Development
+Navigation & Console Commands
 
-### Dev Mode
-```bash
-npm run dev
-```
+Core Shortcuts
+↑ / ↓ or Ctrl + J / Ctrl + K : Navigate up and down through search results.
+Enter : Execute the selected item or flow.
+Esc : Clear the input window or hide the overlay.
+Advanced Action Console (GT Mode)
+Prefix your input string with > to access targeted operations:
+Command Syntax Action Behavior
+> add Opens a native system file picker to index an app or folder.
+> yt <query> Launches your browser directly into a YouTube search.
+> g <query> Launches your browser directly into a Google search.
+> calc <expr> Evaluates algebraic expressions inline.
+> flow Displays all configured automation sequences.
+> flow run <name> Instantly fires a sequence from the workflow inventory.
+theme <name> Changes the visual look of the UI instantly (No prefix required).
+•
+•
 
-### Scripts
-```bash
-npm start        # Run app
-npm run dev      # Run with dev tools
-npm run build    # Build all platforms
-npm run build:win    # Build Windows installer
-npm run build:mac    # Build macOS DMG
-npm run build:linux  # Build Linux AppImage
-```
+•
+•
+•
 
-## 🤝 Contributing
+CoreDeck v1.1.0 Launcher Manual 2
 
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
-- Improve documentation
+Available Themes
 
-## 📝 License
+Switch themes on the fly by typing theme <name> directly into the search bar:
+obsidian (Default Matrix Dark)
+frost (Cool Blues)
+ember (Warm Crimson)
+void (Deep Pure Black)
+cyber (Neon/Synthwave)
+yin (High-Contrast Monochrome)
+steel (Industrial Metallic)
+gold (Premium Accents)
 
-MIT License — See LICENSE file for details
+Project Architecture
 
-## 🙏 Acknowledgments
+coredeck/
+├── main.js # Electron main process (lifecycle & shortcuts)
+├── preload.js # Context isolation bridge
+├── renderer.js # Front-end UI logic, filtering, and key listeners
+├── index.html # Window layout
+├── style.css # Core interface styling & theme configurations
+├── data.json # Local storage matrix for profiles and flows
+└── package.json # Project manifest & build targets
 
-Built with [Electron](https://www.electronjs.org/) ⚛️
+Distribution Compiling
+To bundle and compile a standalone production binary for your current environment:
 
-## 📞 Support
+# Windows
+npm run build:win
+# macOS
+npm run build:mac
+# Linux
+npm run build:linux
 
-Having issues? 
-- Check existing [Issues](https://github.com/master98nxt-glitch/coredeck/issues)
-- Create a new issue with details
-- Include screenshots if possible
+Compiled targets will be generated inside your local /dist directory.
+•
+•
+•
+•
+•
+•
+•
+•
 
----
+CoreDeck v1.1.0 Launcher Manual 3
 
-**Made with ❤️ for productivity lovers**
+Troubleshooting
 
-⭐ If you find CoreDeck useful, please give it a star on GitHub!
+Hotkey Conflicts: If Ctrl + Space fails to call up the terminal, verify that another background service
+(such as PowerToys, Raycast, or global system shortcuts) is not capturing the event.
+Directory Path Failures: When adding paths manually to data.json , ensure you use forward slashes
+( / ) consistently across all OS distributions to prevent tracking breaks.
+Dependency Errors: If the application crashes on start, clear out the workspace caches and reinstall:
+
+rm -rf node_modules package-lock.json && npm install
+
+Project Origin & Contributing
+
+CoreDeck was built out of a personal desire for a minimal, modular workspace launcher tailored to a local
+workflow. Built using software engineering assistance from LLMs, breaking, and
+refactoring.
+Pull Requests, bug fixes, and feature implementations (especially native desktop integrations) are highly
+welcome. Feel free to open an issue or submit a fork!
+License: idk use whatever you want it was a side 3am thought projet
